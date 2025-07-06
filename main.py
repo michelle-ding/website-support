@@ -28,7 +28,7 @@ def write_csv(html_filename, csv_filename):
         filename = url.split('/')[-1]
 
         try:
-            # Expect filename format: GALLERY_ORD_NUM_NAME.ext
+            # Expect filename format: GALLERY_ORDNUM_NAME.ext
             name_parts = filename.split('_')
             galleryname = name_parts[0]
             ordernum = int(name_parts[1])
@@ -116,7 +116,6 @@ def makehtml(csv_filepath, output_dir):
                 'ext': ext
             })
 
-    print(galleries)
     # Step 2: Generate HTML per gallery
     for gallery_name, items in galleries.items():
         # Sort by order number
