@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1rem; }
+    .gallery-container { width: 100%; height: 75vh; overflow: hidden; display: flex; }
+    .gallery { display: flex; overflow-x: auto; overflow-y: hidden; height: 100%; scroll-snap-type: x mandatory; gap: 10px; padding-left: 10px; box-sizing: border-box; }
+    .gallery-item { flex-shrink: 0; scroll-snap-align: start; display: flex; flex-direction: column; height: 100%; max-width: 100%; }
+    .gallery-item video { height: 100%; width: auto; object-fit: cover; display: block; }
+    .gallery-item img { height: 100%; width: auto; object-fit: cover; display: block; }
+    .toggle-sound-btn { margin-top: 8px; width: 30px; height: 30px; cursor: pointer; background: transparent; border: 1px solid #ccc; border-radius: 4px; font-size: 0; }
+  </style>
+</head>
+<body>
+
+<column-set gutter="1.3rem">
+  <column-unit slot="0" span="4">
+    <h1>DI</h1>
+    <br><br>
+    WRITE A DESCRIPTION
+  </column-unit>
+  <column-unit slot="1" span="8">
+    <div class="gallery-container">
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/U2439982835171253369338314773917/DI_0_COVER.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/V2439982835189700113412024325533/DI_1_DETAIL.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <img alt="DI_2_DETAIL.JPG" src="https://freight.cargo.site/m/Z2439982835208146857485733877149/DI_2_DETAIL.JPG">
+        </div>
+    
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/G2439982835226593601559443428765/DI_3_PROCESS.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <img alt="DI_4_PROCESS.JPG" src="https://freight.cargo.site/m/Q2439982835245040345633152980381/DI_4_PROCESS.JPG">
+        </div>
+    
+        <div class="gallery-item">
+          <img alt="DI_5_PROCESS.JPG" src="https://freight.cargo.site/m/Z2439982835263487089706862531997/DI_5_PROCESS.JPG">
+        </div>
+    
+      </div>
+    </div>
+  </column-unit>
+</column-set>
+
+<script>
+  document.querySelectorAll('.gallery-item video').forEach(video => {
+    video.muted = true;
+    const btn = document.createElement('button');
+    btn.className = 'toggle-sound-btn';
+    video.parentNode.appendChild(btn);
+    btn.addEventListener('click', () => {
+      video.muted = !video.muted;
+    });
+  });
+</script>
+
+</body>
+</html>

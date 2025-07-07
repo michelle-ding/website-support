@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASTRONOMICUM</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1rem; }
+    .gallery-container { width: 100%; height: 75vh; overflow: hidden; display: flex; }
+    .gallery { display: flex; overflow-x: auto; overflow-y: hidden; height: 100%; scroll-snap-type: x mandatory; gap: 10px; padding-left: 10px; box-sizing: border-box; }
+    .gallery-item { flex-shrink: 0; scroll-snap-align: start; display: flex; flex-direction: column; height: 100%; max-width: 100%; }
+    .gallery-item video { height: 100%; width: auto; object-fit: cover; display: block; }
+    .gallery-item img { height: 100%; width: auto; object-fit: cover; display: block; }
+    .toggle-sound-btn { margin-top: 8px; width: 30px; height: 30px; cursor: pointer; background: transparent; border: 1px solid #ccc; border-radius: 4px; font-size: 0; }
+  </style>
+</head>
+<body>
+
+<column-set gutter="1.3rem">
+  <column-unit slot="0" span="4">
+    <h1>ASTRONOMICUM</h1>
+    <br><br>
+    WRITE A DESCRIPTION
+  </column-unit>
+  <column-unit slot="1" span="8">
+    <div class="gallery-container">
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/R2439979911694359079701155567005/ASTRONOMICUM_0_COVER.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/J2439979911712805823774865118621/ASTRONOMICUM_1_VIDEO.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/N2439979911731252567848574670237/ASTRONOMICUM_2_VIDEO.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div class="gallery-item">
+          <video autoplay controls loop muted width="300">
+            <source src="https://freight.cargo.site/m/M2439979911749699311922284221853/ASTRONOMICUM_4_VIDEO.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+      </div>
+    </div>
+  </column-unit>
+</column-set>
+
+<script>
+  document.querySelectorAll('.gallery-item video').forEach(video => {
+    video.muted = true;
+    const btn = document.createElement('button');
+    btn.className = 'toggle-sound-btn';
+    video.parentNode.appendChild(btn);
+    btn.addEventListener('click', () => {
+      video.muted = !video.muted;
+    });
+  });
+</script>
+
+</body>
+</html>
